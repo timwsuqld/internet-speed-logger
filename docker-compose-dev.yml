@@ -19,7 +19,7 @@ services:
       - run-speedtest.js
       - daemon
   mongo:
-    image: bitnami/mongodb
+    image: webhippie/mongodb:latest-arm32v7
     expose:
       - "27017"
     ports:
@@ -29,4 +29,4 @@ services:
       - MONGODB_PASSWORD=speedtest
       - MONGODB_DATABASE=speedtest
     volumes:
-      - ./mongo-persistence:/bitnami
+      - ./mongo-persistence:/var/lib/mongodb
