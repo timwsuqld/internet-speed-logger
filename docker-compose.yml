@@ -21,12 +21,13 @@ services:
     volumes:
       - ./config:/data/config
   mongo:
-    image: webhippie/mongodb:latest-arm32v7
+    image: andresvidal/rpi3-mongodb3:latest
     expose:
       - "27017"
+    # These environment things don't currently work
     environment:
       - MONGODB_USERNAME=speedtest
       - MONGODB_PASSWORD=speedtest
       - MONGODB_DATABASE=speedtest
     volumes:
-      - ./mongo-persistence:/var/lib/mongodb
+      - ./mongo-persistence:/data/db/
